@@ -99,63 +99,12 @@
   <div class="container">
     <h1>Something Big is Coming Soon!</h1>
     <p>Stay tuned for our exciting announcement.</p>
-    <div id="countdown">
-      <div class="countdown-section">
-        <span id="days">00</span>
-        <div class="countdown-label">Days</div>
-      </div>
-      <div class="countdown-section">
-        <span id="hours">00</span>
-        <div class="countdown-label">Hours</div>
-      </div>
-      <div class="countdown-section">
-        <span id="minutes">00</span>
-        <div class="countdown-label">Minutes</div>
-      </div>
-      <div class="countdown-section">
-        <span id="seconds">00</span>
-        <div class="countdown-label">Seconds</div>
-      </div>
-    </div>
+  </div>
+  <div class="container">
+    <p>#We Always do, Whatever it takes.</p>
   </div>
 
-  <script>
-    // Set the date for the countdown (one month from the current date)
-    var countDownDate = new Date();
-    countDownDate.setMonth(countDownDate.getMonth() + 1);
 
-    // Update the countdown every second
-    var countdownTimer = setInterval(function () {
-      // Get the current date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now and the countdown date
-      var distance = countDownDate - now;
-
-      // Calculate the days, hours, minutes, and seconds remaining
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the countdown in the respective elements
-      document.getElementById("days").innerHTML = formatTime(days);
-      document.getElementById("hours").innerHTML = formatTime(hours);
-      document.getElementById("minutes").innerHTML = formatTime(minutes);
-      document.getElementById("seconds").innerHTML = formatTime(seconds);
-
-      // If the countdown is finished, display a message
-      if (distance < 0) {
-        clearInterval(countdownTimer);
-        document.getElementById("countdown").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-
-    // Helper function to format the time units (add leading zeros)
-    function formatTime(time) {
-      return time < 10 ? "0" + time : time;
-    }
-  </script>
 </body>
 
 </html>
